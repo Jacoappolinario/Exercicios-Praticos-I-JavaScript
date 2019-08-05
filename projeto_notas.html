@@ -1,0 +1,89 @@
+<meta charset="UTF-8" />
+
+<script>
+  function pulaLinha() {
+    document.write("<br>");
+  }
+
+  function mostra(frase) {
+    document.write(frase);
+    pulaLinha();
+  }
+
+  function tituloPortal(titulo) {
+    for (var linha1 = 0; linha1 <= 30; linha1++) {
+      document.write("*");
+    }
+
+    pulaLinha();
+    document.write(titulo);
+    pulaLinha();
+
+    for (var linha2 = 0; linha2 <= 30; linha2++) {
+      document.write("*");
+    }
+
+    pulaLinha();
+  }
+
+  function mediaDosAlunos(nota1, nota2, nota3) {
+    return (nota1 + nota2 + nota3) / 3;
+  }
+
+  function criaMatricula() {
+    return Math.round(Math.random() * 10000);
+  }
+
+  var alunosCadastrados = ["Jacó", "José", "Carlos", "Fabiana"];
+
+  var tentativaAtual = 1;
+  var maximoTentativa = 3;
+
+  while (tentativaAtual <= maximoTentativa) {
+    var nomeAluno = prompt("Informe o seu nome");
+
+    var existeAluno = false;
+
+    for (var posicao = 0; posicao < alunosCadastrados.length; posicao++) {
+      if (alunosCadastrados[posicao] == nomeAluno) {
+        existeAluno = true;
+        break;
+      }
+    }
+
+    if (existeAluno == true) {
+      alert("BEM-VINDO AO PORTAL DE NOTAS");
+
+      var primeiraNota = parseInt(prompt("Digite a primeira nota"));
+      var segundaNota = parseInt(prompt("Digite a segunda nota"));
+      var terceiraNota = parseInt(prompt("Digite a terceira nota"));
+      var resultado = mediaDosAlunos(primeiraNota, segundaNota, terceiraNota);
+
+      var matricula = criaMatricula();
+
+      tituloPortal("CONSULTE ABAIXO SUAS NOTA");
+      mostra("Nome: " + nomeAluno + " | " + "RA" + matricula);
+      mostra("Turma: B | Professor: André Pereira");
+
+      if (resultado < 5) {
+        mostra(
+          "Meu amigo...Não queria lhe dizer isso..Mais você reprovou! Tururu..."
+        );
+        mostra("Sua nota foi " + resultado);
+      } else {
+        mostra("Manooo! Manooo! Tu passou cara!!");
+        mostra("Sua nota foi " + resultado);
+      }
+
+      break;
+    } else {
+      if (tentativaAtual == maximoTentativa) {
+        mostra("Erro! Você ultrapassou o número de tentativas!");
+      } else {
+        alert("Erro! Tente Novamente!");
+      }
+    }
+
+    tentativaAtual++;
+  }
+</script>

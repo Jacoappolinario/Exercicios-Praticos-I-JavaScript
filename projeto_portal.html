@@ -1,0 +1,104 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+
+    }
+
+    function mediaDosAlunos(nota1, nota2, nota3) {
+
+        return (nota1 + nota2 + nota3) / 3;
+
+    }
+
+    function tituloPortal(titulo) {
+
+        
+        for(var coluna1 = 1; coluna1 <= 30; coluna1++) {
+
+            document.write("*");
+
+        }
+
+        pulaLinha()
+        document.write(titulo);
+        pulaLinha();
+
+        for(var coluna2 = 1; coluna2 <= 30; coluna2++) {
+
+            document.write("*");
+            
+        }  
+
+        pulaLinha();  
+    }
+
+    var alunoCadastrado = "Jacó Apolinário Da Silva";
+    var senhaCadastrada = "12345";
+
+    var tentativaAtual = 1;
+    var maximoTentativa = 3;
+
+    while(tentativaAtual <= maximoTentativa) {
+
+        var nomeAluno = prompt("Informe seu nome completo");
+        var senhaAluno = parseInt(prompt("Informe sua senha"));
+
+        if (alunoCadastrado == nomeAluno && senhaCadastrada == senhaAluno) {
+            
+            alert("BEM-VINDO AO PORTAL DE NOTAS");
+
+            var primeiraNota = parseInt(prompt("Digite a primeira nota"));
+            var segundaNota = parseInt(prompt("Digite a segunda nota"));
+            var terceiraNota = parseInt(prompt("Digite a terceira nota"));
+            var resultado = mediaDosAlunos(primeiraNota, segundaNota, terceiraNota);
+
+            
+            tituloPortal("CONSULTE ABAIXO SUAS NOTA");
+            mostra("Nome: " + nomeAluno + " | " + "RA142536");
+            mostra("Turma: B | Professor: André Pereira");
+
+            if (resultado < 5) {
+
+                mostra("Meu amigo...Não queria lhe dizer isso..Mais você reprovou! Tururu...")
+                mostra("Sua nota foi " + resultado);
+
+            } else {
+
+                mostra("Manooo! Manooo! Tu passou cara!!");
+                mostra("Sua nota foi " + resultado);
+
+            }
+
+            break;
+
+        } else {
+
+            if (tentativaAtual == maximoTentativa) {
+
+                mostra("Erro! Você ultrapassou o número de tentativas!")
+
+            } else {
+
+                alert("Senha inválida! Tente Novamente!");
+
+            }
+
+
+        }
+
+        tentativaAtual++;
+
+    }
+
+</script>

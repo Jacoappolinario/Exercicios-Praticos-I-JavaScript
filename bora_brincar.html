@@ -1,0 +1,75 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+
+    }
+
+    function tituloPagina(mensagem) {
+
+        document.write("***************************************************")
+        pulaLinha()
+        document.write(mensagem);
+        pulaLinha() 
+        document.write("***************************************************")
+        pulaLinha()
+    }
+
+    function calculaMediaFinal(nota1, nota2, nota3) {
+
+        return (nota1 + nota2 + nota3) / 3;
+
+    }
+
+    var nomeAluno = prompt("Qual é o seu nome completo? ");
+    var senhaAluno = parseInt(prompt("Informe sua senha"));
+
+    if (senhaAluno == 12345 && nomeAluno == "Jacó Apolinário Da Silva") {
+
+        var turmaAluno = prompt("Qual é a sua turma? ");
+        var professor = prompt("Informe o nome do professor:");
+        var nota1 = parseInt(prompt("Digite sua primeira nota"));
+        var nota2 = parseInt(prompt("Digite sua segunda nota"));
+        var nota3 = parseInt(prompt("Digite sua terceira nota"));
+        var resultado = calculaMediaFinal(nota1, nota2, nota3);
+
+        tituloPagina("BEM-VINDO");
+        tituloPagina("SISTEMA DE NOTAS");
+        mostra("Nome: " + nomeAluno);
+        mostra("Turma: " + turmaAluno + " | " +"Professor: " + professor);
+        mostra("Matricula: RA789456");
+
+        if(resultado < 5) {
+
+            mostra("Você está em recuperação! Sua nota foi " + resultado);
+
+        } else {
+
+            mostra("Você está passado! Parabéns! Sua nota foi " + resultado);
+
+        }
+
+
+    } else {
+
+        mostra("Erro! Senha incorreta! Tente Novamente!");
+
+    }
+
+    
+
+    
+    
+
+
+</script>

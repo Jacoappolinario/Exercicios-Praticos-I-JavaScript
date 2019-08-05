@@ -1,0 +1,103 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+
+    }
+
+    function tituloPortal(titulo) {
+
+        for(var linha1 = 0; linha1 <= 30; linha1++) {
+
+            document.write("*");
+
+        }
+
+        pulaLinha();
+        document.write(titulo);
+        pulaLinha();
+
+        for(var linha2 = 0; linha2 <= 30; linha2++) {
+
+            document.write("*");
+
+        }
+    }
+
+    function mediaSDosAlunos (nota1 , nota2, nota3) {
+
+        return (nota1 + nota2 + nota3) / 3;
+
+    }
+
+    function criaMatricula() {
+
+        return Math.round(Math.random() * 10000);
+
+    }
+
+    var listaAlunos = ["Jacó", "José", "carlos", "Fabiana"];
+
+    var tentativaAtual = 1;
+    var maximoTentativa = 3;
+
+    while(tentativaAtual <= maximoTentativa) {
+
+        var nomeAluno = prompt("Informe seu nome");
+
+
+        for(var posicao = 0; posicao < listaAlunos.length; posicao++) {
+
+            if(listaAlunos[posicao] == nomeAluno) {
+
+                var nome = listaAlunos[posicao];
+
+                alert("BEM-VINDO AO PORTAL DE NOTAS " + nome);
+
+                var primeiraNota = parseInt(prompt("Digite a primeira nota"));
+                var segundaNota = parseInt(prompt("Digite a segunda nota"));
+                var terceiraNota = parseInt(prompt("Digite a terceira nota"));
+                var resultado =  mediaSDosAlunos(primeiraNota, segundaNota, terceiraNota);
+                var matricula = criaMatricula();
+
+                tituloPortal("ABAIXO SE ENCONTRA AS NOTAS");
+                mostra("Nome: " + nome  + " | " + "RA" + matricula);
+                mostra("Turma: B" + " | " + "Professor: José");
+
+                if(resultado < 5) {
+
+                    mostra("Não queria dizer não..Mas você reprovou! Tururu...");
+                    mostra("Nota: " + resultado);
+
+                } else {
+
+                    mostra("Mano! Maanoo! Tu passou!");
+                    mostra("Nota: " + resultado);
+
+                }
+
+                break;
+
+            } else {
+
+                mostra("erro");
+
+            }
+
+        }
+
+        tentativaAtual++;
+
+    }
+
+</script>

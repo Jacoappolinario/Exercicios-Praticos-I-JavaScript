@@ -1,0 +1,93 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+
+    }
+
+    function tituloPortal(titulo) {
+
+        document.write("***************************************");
+        pulaLinha();
+        document.write(titulo);
+        pulaLinha();
+        document.write("***************************************");
+        pulaLinha();
+
+    }
+
+    function alunosMedia(nota1, nota2, nota3) {
+
+        return (nota1 + nota2 + nota3) / 3;
+
+    }
+
+    var alunoCadastrado = "Jacó Apolinário Da Silva";
+    var senhaCadastrada = "12345";
+
+    var tentativaAtual = 1;
+    var maximoTantativas = 3;
+
+    while (tentativaAtual <= maximoTantativas) {
+
+        var nomeAluno = prompt("Digite seu nome completo");
+        var senhaAluno = parseInt(prompt("Digite sua senha"));
+
+        if (alunoCadastrado == nomeAluno && senhaCadastrada == senhaAluno) {
+
+            alert("BEM-VINDO AO PORTAL DE CALCULO DE NOTAS!");
+
+            var primeiraNota = parseInt(prompt("Digite a primeira nota"));
+            var segundaNota = parseInt(prompt("Digite a segunda nota"));
+            var terceiraNota = parseInt(prompt("Digite a terceira nota"));
+            var resultado = alunosMedia(primeiraNota, segundaNota, terceiraNota);
+
+            tituloPortal("ABAIXO SE ENCONTRA O CALCULO DE NOTAS");
+            mostra("Nome: " + nomeAluno);
+            mostra("Turma: B" + " | " + "Professor: Luiz");
+
+            if (resultado < 5) {
+
+                mostra("Meu amigo...Queria dizer não..Mas você reprovou..Tururu");
+
+            } else {
+
+                mostra("Rapaz! Mas tu é nerd em! Tu passou!");
+
+            }
+
+            tentativaAtual = maximoTantativas;
+
+        } else {
+
+            if (tentativaAtual == maximoTantativas) {
+
+                mostra("Erro! Login Inválido");
+
+            } else {
+
+                alert("Erro! Tente novamente!");
+
+            }
+
+        }
+
+        tentativaAtual = tentativaAtual + 1;
+
+    }
+
+
+
+
+
+</script>

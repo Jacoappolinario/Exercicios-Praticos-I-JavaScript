@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+
+    }
+
+    var numero = 2;
+    var limite = 100;
+    
+    while(numero <= limite) {
+
+        mostra(numero);
+        numero = numero + 2;
+
+    }
+
+    mostra("FIM");
+</script>

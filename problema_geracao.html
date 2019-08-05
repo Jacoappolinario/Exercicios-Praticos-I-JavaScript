@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+
+    }
+
+    function exibeGeracao(frase) {
+
+        document.write(frase);
+        pulaLinha();
+
+    }
+
+    var anoChegaram = 1500;
+    var geracaoAtual = 2019;
+    var idadeMediaQuandoTemFilhos = 28
+    var resultado = (geracaoAtual - anoChegaram) / idadeMediaQuandoTemFilhos;
+    exibeGeracao("Desde " + anoChegaram + " até o ano atual, quantas gerações se passaram? ");
+    exibeGeracao(Math.round(resultado));
+
+</script>
